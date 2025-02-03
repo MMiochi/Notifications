@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.Button);
         button.setOnClickListener(v->{
-            sendNotification();
+            NotificationHelper.setNotification(this,"Nowe powiadomienie","skibidi");
         });
 
         Button Buttonlong = findViewById(R.id.ButtonLong);

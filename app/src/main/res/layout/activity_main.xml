@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_marginTop="100dp">
 
     <Button
         android:id="@+id/Button"
@@ -27,5 +29,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Powiadomienie Zdjecie" />
+
+    <Button
+        android:id="@+id/CustomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie custom" />
+
+    <Button
+        android:id="@+id/CustomLongButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie customlong" />
+
+    <Button
+        android:id="@+id/CustomPictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie custom picture" />
 
 </LinearLayout>

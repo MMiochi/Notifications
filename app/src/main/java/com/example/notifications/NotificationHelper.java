@@ -20,9 +20,9 @@ public class NotificationHelper  extends MainActivity {
 
     private static final String CHANNEL_ID = "default channel";
     private static final String CHANNEL_NAME = "Kanał powiadomień";
-    private static final int NOTIFICATION_ID = 1;
+    //private static final int NOTIFICATION_ID = 1;
 
-    public static void setNotification(AppCompatActivity activity, String title, String message){
+    public static void setNotification(int NOTIFICATION_ID,AppCompatActivity activity, String title, String message, Integer style){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(activity, android.Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -42,12 +42,19 @@ public class NotificationHelper  extends MainActivity {
 
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(activity, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.dice2)
+                        .setSmallIcon(R.drawable.fag)
                         .setContentTitle(title)
                         .setContentText(message)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setAutoCancel(true);
-
+            switch (style){
+                case 1:
+                    builder.setStyle(new NotificationCompat.BigTextStyle().bigText(message));
+                    break;
+                case 2:
+                    Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.fag);
+                    builder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).setBigContentTitle(title));
+            }
 
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());

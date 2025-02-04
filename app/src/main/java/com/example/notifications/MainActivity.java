@@ -21,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "my_chanel_id";
+        private static int ID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.Button);
         button.setOnClickListener(v->{
-            NotificationHelper.setNotification(this,"Nowe powiadomienie","skibidi");
+            sendNotification();
         });
 
         Button Buttonlong = findViewById(R.id.ButtonLong);
@@ -41,6 +42,24 @@ public class MainActivity extends AppCompatActivity {
         Button ButtonPicture = findViewById(R.id.PictureButton);
         ButtonPicture.setOnClickListener(v->{
             sendNotificationPicture();
+        });
+
+        Button ButtonCustom = findViewById(R.id.CustomButton);
+        ButtonCustom.setOnClickListener(v->{
+            NotificationHelper.setNotification(ID,this,"Nowe powiadomienie","skibidi", null);
+            ID++;
+        });
+
+        Button ButtonCustomlong = findViewById(R.id.CustomLongButton);
+        ButtonCustomlong.setOnClickListener(v->{
+            NotificationHelper.setNotification(ID,this,"Długie custom powiadomienie","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 1);
+            ID++;
+        });
+
+        Button ButtonCustomPicture = findViewById(R.id.CustomPictureButton);
+        ButtonCustomPicture.setOnClickListener(v -> {
+            NotificationHelper.setNotification(ID,this,"Faggot","Skibidi",2);
+            ID++;
         });
     }
     private void createNotificationChannel() {
@@ -114,7 +133,7 @@ private void sendNotificationLong(){
     }
     private void sendNotificationPicture(){
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dice0);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fag);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
             if(checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED){
@@ -131,7 +150,7 @@ private void sendNotificationLong(){
             NotificationCompat.Builder builder =
                     new NotificationCompat.Builder(this, CHANNEL_ID)
                             .setSmallIcon(R.drawable.dice2)
-                            .setContentTitle("Powiadomienie Obraz 3TPE")
+                            .setContentTitle("Fucking faggot")
                             .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap))
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                             .setContentIntent(pendingIntent)

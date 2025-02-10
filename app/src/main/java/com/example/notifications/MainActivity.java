@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
             NotificationHelper.setNotification(ID,this,"Faggot","Skibidi",2);
             ID++;
         });
+
+        Button ButtonAddLine = findViewById(R.id.ButtonAddLine);
+        ButtonAddLine.setOnClickListener(v -> {
+            NotificationHelper.setNotification(ID,this,"Pierwsza linia tekstu","Skibidi",3);
+            ID++;
+        });
     }
     private void createNotificationChannel() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

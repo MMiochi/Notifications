@@ -50,5 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Powiadomienie custom picture" />
+    <Button
+        android:id="@+id/ButtonAddLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie add line" />
 
 </LinearLayout>

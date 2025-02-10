@@ -54,6 +54,13 @@ public class NotificationHelper  extends MainActivity {
                 case 2:
                     Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.fag);
                     builder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).setBigContentTitle(title));
+                    break;
+                case 3:
+                    NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+                    inboxStyle.addLine(message);
+                    inboxStyle.addLine("Dodatkowa linia tekstu.");
+                    builder.setStyle(inboxStyle);
+                    break;
             }
 
 

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        createNotificationChannel();
+        NotificationHelper.createNotificationChannels(this);
 
         Button button = findViewById(R.id.Button);
         button.setOnClickListener(v->{
@@ -46,25 +46,25 @@ public class MainActivity extends AppCompatActivity {
 
         Button ButtonCustom = findViewById(R.id.CustomButton);
         ButtonCustom.setOnClickListener(v->{
-            NotificationHelper.setNotification(ID,this,"Nowe powiadomienie","skibidi", null);
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_LOW,this,"Nowe powiadomienie","skibidi", 0);
             ID++;
         });
 
         Button ButtonCustomlong = findViewById(R.id.CustomLongButton);
         ButtonCustomlong.setOnClickListener(v->{
-            NotificationHelper.setNotification(ID,this,"Długie custom powiadomienie","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 1);
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_DEFAULT,this,"Długie custom powiadomienie","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 1);
             ID++;
         });
 
         Button ButtonCustomPicture = findViewById(R.id.CustomPictureButton);
         ButtonCustomPicture.setOnClickListener(v -> {
-            NotificationHelper.setNotification(ID,this,"Faggot","Skibidi",2);
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_HIGH,this,"Faggot","Skibidi",2);
             ID++;
         });
 
         Button ButtonAddLine = findViewById(R.id.ButtonAddLine);
         ButtonAddLine.setOnClickListener(v -> {
-            NotificationHelper.setNotification(ID,this,"Pierwsza linia tekstu","Skibidi",3);
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_DEFAULT,this,"Pierwsza linia tekstu","Skibidi",3);
             ID++;
         });
     }

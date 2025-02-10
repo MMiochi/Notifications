@@ -9,7 +9,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#D19E5F">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buttons"
+        android:textSize="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/Button"
         android:backgroundTint="#E01313"
@@ -32,7 +38,16 @@
         android:backgroundTint="#46D5B4"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Powiadomienie Zdjecie" />
+        android:text="Powiadomienie Zdjecie"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom Buttons"
+        android:textSize="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/CustomButton"
@@ -56,6 +71,15 @@
         android:backgroundTint="#EB3D05"
         android:layout_gravity="center_horizontal"
         android:text="Powiadomienie custom picture" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wszystko inne"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/ButtonAddLine"
         android:layout_width="wrap_content"
